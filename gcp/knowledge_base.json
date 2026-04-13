@@ -1,0 +1,32 @@
+[
+  {
+    "keywords": ["database", "connection", "timeout", "refused"],
+    "issue": "Database Connection Timeout",
+    "cause": "The application cannot reach the database. This could be due to network security groups (firewalls), incorrect credentials, or the database service being down/overloaded.",
+    "fix": "1. Verify the connection string and credentials. 2. Ensure your backend IP is whitelisted in the database firewall. 3. Check the database server health metrics."
+  },
+  {
+    "keywords": ["502", "bad gateway", "nginx", "proxy"],
+    "issue": "502 Bad Gateway Error",
+    "cause": "A reverse proxy or load balancer cannot reach the upstream backend server. The backend might be crashed, restarting, or not listening on the correct port.",
+    "fix": "1. Check if the upstream backend application is running. 2. Verify proxy configurations (e.g., Nginx sites-available) to ensure they point to the correct internal IP and port."
+  },
+  {
+    "keywords": ["cors", "cross-origin", "policy"],
+    "issue": "CORS (Cross-Origin Resource Sharing) Error",
+    "cause": "The backend API is not sending the correct 'Access-Control-Allow-Origin' headers, blocking the browser from reading the response.",
+    "fix": "1. Add CORS headers to your backend response (e.g., 'Access-Control-Allow-Origin': '*'). 2. Ensure your API handles OPTIONS preflight requests properly returning a 200 OK."
+  },
+  {
+    "keywords": ["memory", "OOM", "crashed", "leak"],
+    "issue": "Out Of Memory (OOM) Crash",
+    "cause": "The process consumed more memory than allocated, often due to a memory leak in code or unoptimized large payloads.",
+    "fix": "1. Restart the service to restore functionality. 2. Review logs for OOMKill events. 3. Profile the application code for memory leaks or scale up instances."
+  },
+  {
+    "keywords": ["403", "forbidden", "access denied", "permissions"],
+    "issue": "403 Forbidden - Access Denied",
+    "cause": "The authenticated user or service principal lacks the required IAM (Identity and Access Management) permissions to perform the action.",
+    "fix": "1. Verify IAM roles and policies. 2. Ensure the storage bucket or APi endpoint explicitly allows access for the caller's identity. 3. Check for IP-based restrictions."
+  }
+]

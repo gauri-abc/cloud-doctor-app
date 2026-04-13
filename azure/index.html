@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud Doctor | Multi-Cloud Diagnosis</title>
+    <meta name="description" content="A serverless troubleshooting application running on Azure, AWS, and GCP.">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-globes">
+        <div class="globe azure"></div>
+        <div class="globe aws"></div>
+        <div class="globe gcp"></div>
+    </div>
+
+    <main class="container">
+        <header>
+            <h1>Cloud Doctor</h1>
+            <p class="subtitle">Enter your infrastructure symptoms for a multi-cloud diagnosis.</p>
+        </header>
+
+        <section class="diagnosis-card glassmorphism">
+            <form id="diagnosisForm">
+                <div class="input-group">
+                    <label for="query">What issue are you experiencing?</label>
+                    <input type="text" id="query" name="query" placeholder="e.g., getting a 502 bad gateway error on nginx..." required autocomplete="off">
+                </div>
+                <button type="submit" id="submitBtn">
+                    <span class="btn-text">Diagnose Issue</span>
+                    <span class="loader" style="display: none;"></span>
+                </button>
+            </form>
+        </section>
+
+        <section id="resultSection" class="result-card glassmorphism hidden">
+            <!-- Dynamic content will be injected here -->
+        </section>
+
+        <div id="errorNotification" class="notification hidden">
+            <p id="errorMessage"></p>
+        </div>
+    </main>
+
+    <footer>
+        <p>Frontend: Azure | Backend: AWS Lambda | Storage: Google Cloud</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
