@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const errorMessage = document.getElementById('errorMessage');
 
     // IMPORTANT: Replace this with your actual AWS API Gateway Invoke URL once deployed.
-    const AWS_API_GATEWAY_URL = 'https://xxxxxuioqxxx.execute-api.ap-south-1.amazonaws.com/diagnose';
+    const AWS_API_GATEWAY_URL = 'https://t1w782a761.execute-api.ap-south-1.amazonaws.com/diagnose';
 
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
